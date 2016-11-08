@@ -4,15 +4,42 @@
     <meta charset="utf-8" />
     <title>HTML Playground</title>
     <script>
+      function textToConsole(){
+        var input = document.getElementById("textInput").value;
+        console.log(input);
+      }
+
+/*      function outputMessage(inputValue){
+        inputValue = document.getElementById("textInput").value;
+        document.getElementById("output").innerHTML = inputValue;
+      }
+*/
+      function outputMessage(message){
+        console.log(message);
+        document.getElementById("output").innerHTML = message;
+      }
+
+      function compare(inp){
+        var inValue = document.getElementById("textInput").value;
+        if (inValue == inp) {
+          return "same";
+        }
+        else {
+          return "different";
+        }
+      }
+
       function clickOne(){
 
       }
+
       function clickTwo(){
 
       }
     </script>
   </head>
   <body lang="en-US">
+    <input type="text" id="textInput" placeholder="Input text..." onchange="outputMessage();"/>
     <button type="button" id=button1 onclick="clickOne();">One</button>
     <button type="button" id=button2 onclick="clickTwo();">Two</button>
     <p id="output">Counter: </p>
